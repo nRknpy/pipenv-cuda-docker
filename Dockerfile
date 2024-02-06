@@ -36,8 +36,12 @@ RUN git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
 
 WORKDIR /app
 
+ARG PYTHON_VERSION
+
 RUN pip install --upgrade pip && \
-    python3 -m pip install pipenv
+    python3 -m pip install pipenv && \
+    pyenv install $PYTHON_VERSION && \
+    pyenv local $PYTHON_VERSION
 
 COPY entrypoint.sh ./
 
