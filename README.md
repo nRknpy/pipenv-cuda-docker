@@ -19,6 +19,8 @@ $ rm -rf .git
 
 ### 仮想環境で使用する Python のバージョンを指定
 
+docker-compose.yml を書き換える．
+
 ```
 services:
 app:
