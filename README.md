@@ -36,3 +36,9 @@ pyenv でインストールするので，リビジョンまで必要．
 ```sh
 $ docker compose up -d && docker compose exec app bash
 ```
+
+コンテナに入った後，
+
+```sh
+$ pipenv shell
+```
