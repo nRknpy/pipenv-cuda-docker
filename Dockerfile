@@ -40,9 +40,11 @@ ARG PYTHON_VERSION
 
 RUN pip install --upgrade pip && \
     python3 -m pip install pipenv && \
-    pyenv install $PYTHON_VERSION && \
-    pyenv local $PYTHON_VERSION
+    pyenv install $PYTHON_VERSION
+# echo 'export PYTHON_VERSION="$PYTHON_VERSION"' >> ~/.bashrc
 
 COPY entrypoint.sh ./
 
-ENTRYPOINT [ "/app/entrypoint.sh" ]
+ENV PYTHON_VERSION=$PYTHON_VERSION
+
+ENTRYPOINT [ "./entrypoint.sh" ]
