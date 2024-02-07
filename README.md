@@ -10,21 +10,27 @@ Docker コンテナ内で CUDA と pipenv を使用するための雛型．
 
 ## 環境構築
 
-1. clone
-   ```sh
-   $ git clone https://github.com/nRknpy/pipenv-cuda-docker.git <ディレクトリ名>
-   $ rm -rf .git
-   ```
-2. 仮想環境で使用する Python のバージョンを指定
-   ```
-   services:
-   app:
-       build:
-       args:
-           - PYTHON_VERSION=<python_version>
-   ```
-   pyenv でインストールするので，リビジョンまで必要．
-3. コンテナを起動し，仮想環境に入る
-   ```sh
-   $ docker compose up -d && docker compose exec app bash
-   ```
+### clone
+
+```sh
+$ git clone https://github.com/nRknpy/pipenv-cuda-docker.git <ディレクトリ名>
+$ rm -rf .git
+```
+
+### 仮想環境で使用する Python のバージョンを指定
+
+```
+services:
+app:
+    build:
+    args:
+        - PYTHON_VERSION=<python_version>
+```
+
+pyenv でインストールするので，リビジョンまで必要．
+
+### コンテナを起動し，仮想環境に入る
+
+```sh
+$ docker compose up -d && docker compose exec app bash
+```
