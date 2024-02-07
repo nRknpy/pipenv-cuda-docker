@@ -1,1 +1,30 @@
 # pipenv-cuda-docker
+
+Docker コンテナ内で CUDA と pipenv を使用するための雛型．
+
+## 動作環境
+
+- [NVIDIA Driver](https://www.nvidia.co.jp/Download/index.aspx)
+- [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) (>=12.3)
+- [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+
+## 環境構築
+
+1. clone
+   ```sh
+   $ git clone https://github.com/nRknpy/pipenv-cuda-docker.git <ディレクトリ名>
+   $ rm -rf .git
+   ```
+2. 仮想環境で使用する Python のバージョンを指定
+   ```
+   services:
+   app:
+       build:
+       args:
+           - PYTHON_VERSION=<python_version>
+   ```
+   pyenv でインストールするので，リビジョンまで必要．
+3. コンテナを起動し，仮想環境に入る
+   ```sh
+   $ docker compose up -d && docker compose exec app bash
+   ```
