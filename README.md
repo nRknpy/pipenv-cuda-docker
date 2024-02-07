@@ -14,6 +14,7 @@ Docker コンテナ内で CUDA と pipenv を使用するための雛型．
 
 ```sh
 $ git clone https://github.com/nRknpy/pipenv-cuda-docker.git <ディレクトリ名>
+$ cd <ディレクトリ名>
 $ rm -rf .git
 ```
 
