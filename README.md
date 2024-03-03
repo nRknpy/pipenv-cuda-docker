@@ -46,7 +46,7 @@ $ pipenv shell
 
 ## For Windows
 
-Git クライアントの改行コードを LR にしておく必要がある．
+Git クライアントの改行コードを LF にしておく必要がある．
 
 ```sh
 $ git config --global core.autocrlf input
