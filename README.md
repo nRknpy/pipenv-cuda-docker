@@ -43,3 +43,11 @@ $ docker compose up -d && docker compose exec app bash
 ```sh
 $ pipenv shell
 ```
+
+## For Windows
+
+Git クライアントの改行コードを LR にしておく必要がある．
+
+```
+git config --global core.autocrlf input
+```
