@@ -48,6 +48,6 @@ $ pipenv shell
 
 Git クライアントの改行コードを LR にしておく必要がある．
 
-```
+```sh
 $ git config --global core.autocrlf input
 ```
